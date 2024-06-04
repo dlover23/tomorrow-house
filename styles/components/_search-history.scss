@@ -1,0 +1,48 @@
+.search-history {
+  $delete-button-size: 32px;
+
+  &-header {
+    @include flexbox(between);
+    margin-bottom: 8px;
+
+    .title,
+    button {
+      @include text-style(13, $secondary);
+      font-weight: 400;
+    }
+  }
+
+  &-content {
+    .placeholder {
+      @include flexbox(start);
+      @include text-style(16, $tertiary);
+      width: 100%;
+      height: 44px;
+      padding: 0 8px;
+      font-weight: 400;
+    }
+  }
+  &-item {
+    @include flexbox(between);
+    position: relative;
+
+    .word-button {
+      @include text-style(16, $primary);
+      width: 100%;
+      font-weight: 400;
+      text-align: left;
+      padding: 10px $delete-button-size 10px 8px;
+    }
+
+    .delete-button {
+      @include flexbox;
+      position: absolute;
+      top: 6px;
+      right: 0;
+      width: $delete-button-size;
+      height: $delete-button-size;
+      font-size: 16px;
+      color: $tertiary;
+    }
+  }
+}
