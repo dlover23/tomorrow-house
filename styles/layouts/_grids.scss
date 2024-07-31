@@ -37,6 +37,8 @@ $lg-columns: 12;
 $lg-unit: 75px;
 $lg-max-container: ($lg-unit + $gutter) * $lg-columns;
 
+$grid-margin: 15px;
+
 .container {
   width: 100%;
   padding: 0 $sm-margin;
