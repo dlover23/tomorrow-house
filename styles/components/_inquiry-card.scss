@@ -1,4 +1,6 @@
 .inquiry-card {
+  padding-bottom: 40px;
+
   &-header {
     @include text-style(12px);
     margin-bottom: 8px;
@@ -31,15 +33,35 @@
         font-weight: 400;
       }
     }
+
+    .is-answered {
+      color: $blue;
+    }
   }
 
   &-body {
     @include text-style(13);
 
-    .question-content {
-      @include flexbox(start, start);
+    .inquiry-content {
       position: relative;
       padding-left: 20px;
+
+      &:first-child:not(:last-child) {
+        margin-bottom: 12px;
+      }
+    }
+
+    .seller {
+      @include flexbox(start);
+      margin-bottom: 4px;
+
+      strong {
+        margin-right: 4px;
+      }
+
+      time {
+        @include text-style(12, $tertiary);
+      }
     }
 
     span {
@@ -70,8 +92,18 @@
     &-body {
       @include text-style(14);
 
-      .question-content {
+      .inquiry-content {
         padding-left: 24px;
+
+        &:first-child:not(:last-child) {
+          margin-bottom: 16px;
+        }
+      }
+
+      .seller {
+        strong {
+          @include text-style(16);
+        }
       }
 
       span {
