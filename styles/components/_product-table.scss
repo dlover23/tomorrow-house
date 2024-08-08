@@ -1,8 +1,9 @@
 .product-table {
   $table-cell-padding: 12px;
   $table-th-width-sm: 100px;
-  $table-th-width-md: 140px;
+  $table-th-width-md: 140px + $table-cell-padding;
 
+  width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
 
