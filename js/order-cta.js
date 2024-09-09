@@ -20,3 +20,30 @@ function closeOrderModal() {
 }
 
 orderModalOverlay.addEventListener('click', closeOrderModal)
+
+function toggleOrderCtaBookmark() {
+  //1. 버튼에 is-active 클래스 추가
+  //2. icon 클래스가 변경 => ic-bookmark-filled
+  //3. span에 count 숫자값 변경
+  const [icon, countSpan] = this.children
+  const count = Number(countSpan.innerHTML.replaceAll(',', ''))
+
+  let newCount = count
+
+  if (this.classList.contains('is-active')) {
+    // NOTE: 활성화상태 -> 비활성화 변경 (ic-bookmark)
+    icon.classList.add('ic-bookmark')
+    icon.classList.remove('ic-bookmark-filled')
+    newCount = newCount - 1
+  } else {
+    // NOTE: 비활성화상태 -> 활성화 변경 (ic-bookmark-filled)
+    icon.classList.add('ic-bookmark-filled')
+    icon.classList.remove('ic-bookmark')
+    newCount = newCount + 1
+  }
+
+  countSpan.innerHTML = newCount.toLocaleString()
+  this.classList.toggle('is-active')
+}
+
+orderCtaBookmarkButton.addEventListener('click', toggleOrderCtaBookmark)
